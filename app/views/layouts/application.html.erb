@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favpost</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places",'data-turbolinks-track' => true   %>
+
+		<%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to "Favpost", root_path %>
+        </div>
+        <% if user_signed_in? %>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to new_pin_path do %>
+                <i class = "fa fa-plus-circle fa-2x"></i>
+                <% end %>
+            </li>
+
+
+            <li id="language-show" class="header-menu">
+                <%= image_tag avatar_url(current_user, style: :navbar), class: "img-circle" %>
+                <%= current_user.name %>
+            </li>
+
+              <ul id="language-list" class="hide-list" style="list-style:none;">
+                <li><%= link_to "Edit Profile" ,edit_user_registration_path %> </li>
+                <li>
+                    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                </li>
+              <ul/>
+          </ul>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Sign In", new_user_session_path %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>
+      <% end %>
+      <%= yield %>
+		</div>
+    <footer>
+      <div class = "container">
+        <p><a href=""  class="fa fa-facebook-square fa-3x"></a>
+        <a href=""  class="fa fa-twitter-square fa-3x"></a>
+        <a href=""  class="fa fa-medium fa-3x"></a></p>
+        
+        <p>© 2015 Favpost. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

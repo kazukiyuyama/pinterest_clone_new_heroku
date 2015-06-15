@@ -58,19 +58,27 @@ nav {
   border-color: #FFFFFF;
 }
 
-/*///////////top var////////////*/
-.topbar{
-	width:100%;
+/*///////////breadcremb////////////*/
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: rgb(233, 84, 100);
+  border-radius: 4px;
+
+
+  	a{
+  		color:#FFFFFF;
+  	}
+  	a:hover{
+  		color:#FFFFFF;
+  		
+
+  		
+  	}
+
 }
-.topbar ul{
-	font-size: 0;
-}
-.topbar li{
-  background-color: #222222;
-  display: inline-block;
-  font-size: 12px;
-  width: 25%;
-}
+
 
 /*///////////////////////*/
 

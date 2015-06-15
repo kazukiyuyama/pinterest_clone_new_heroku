@@ -47,13 +47,38 @@
           </ul>
         <% end %>
       </div>
+
+
+
+
+
+
+    <div class="topbar">
+      <ul style="list-style:none;">
+        <li><a href="#">Foods</a></li>
+        <li><a href="#">Cosmetics</a></li>
+        <li><a href="#">Cloths</a></li>
+      </ul>
+    </div>
+
+  
+
+
+
+
+
     </nav>
+
     <div class="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert alert-info" %>
       <% end %>
+   
+
+
       <%= yield %>
 		</div>
+
     <footer>
       <div class = "container">
         <p><a href=""  class="fa fa-facebook-square fa-3x"></a>

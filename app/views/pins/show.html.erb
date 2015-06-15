@@ -25,16 +25,18 @@
         <p class="description">
           <%= @pin.description %>
         </p>
+        <p class="description price">
+          Price: ¥<%= @pin.price %>
+        </p>
 				<p class="description">
 					<%= @pin.address %>
 				</p>
 
+
 				<div id="map-canvas" data-longtitude="<%= @pin.longitude %>" data-latitude="<%= @pin.latitude %>" style="width:500px; height:300px"></div>
 
 
-				<p class="description">
-					Price: ¥<%= @pin.price %>
-				</p>
+				
         <hr>
         <p class="user">
           Submitted by

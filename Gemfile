@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'paperclip-dropbox', '~> 1.3.1'
 # gem 'haml', '~> 4.0.5'
 
 gem 'commontator', '~> 4.10.5'

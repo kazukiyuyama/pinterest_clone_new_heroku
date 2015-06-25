@@ -3,7 +3,11 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @pins = Pin.all.order("created_at DESC")
+    if params.has_key?(:tag)
+      @pins = Pin.pin_by_category(params[:tag])
+    else
+      @pins = Pin.all.order('created_at DESC')
+    end
   end
 
   def show
@@ -30,7 +34,7 @@ class PinsController < ApplicationController
   def update
     if @pin.update(pin_params)
       respond_to do |format|
-				format.html {redirect_to @pin }
+        format.html {redirect_to @pin }
         format.json { render :json => @pin }
       end
     end
@@ -48,7 +52,7 @@ class PinsController < ApplicationController
 
   private
   def pin_params
-    params.require(:pin).permit(:title, :description, :price, :address, :latitude, :longitude)
+    params.require(:pin).permit(:title, :description, :price, :address, :latitude, :longitude, :tag)
   end
 
   def find_pin

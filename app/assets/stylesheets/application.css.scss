@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 nav {
 	/* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);*/
 	.navbar-brand {
+		  padding-top: 10px;
 		a {
 			color: #e95464;
 			font-size:60px;
@@ -59,28 +60,38 @@ nav {
 }
 
 /*///////////breadcremb////////////*/
-.breadcrumb {
-  padding: 8px 15px;
+.breadcrumb, .pin-nav {
+  padding: 0 10px;
   margin-bottom: 20px;
   list-style: none;
+  text-align: center;
   background-color: rgb(233, 84, 100);
-  border-radius: 4px;
-
-
   	a{
   		color:#FFFFFF;
   	}
   	a:hover{
   		color:#FFFFFF;
-  		
-
-  		
   	}
-
 }
 
+.pin-nav ol {
+  padding: 0;
+  margin: auto;
+  display: inline-block;
+}
 
-/*///////////////////////*/
+.pin-nav li {
+  display: inline-block;
+  a {
+    padding: 12px 15px;
+    display: block;
+  }
+  a:hover {
+    background: #de365a;
+  }
+}
+
+  /*///////////////////////*/
 
 #pins {
   margin: 0 auto;
@@ -302,3 +313,13 @@ a {
   display: none;
 }
 /*/////////////////////////////////*/
+
+/*///////////// Search Pin by category ////////////*/
+
+.no-product-found {
+ 
+  border-radius:10px;
+  padding:10px 10px 10px 36px;
+  margin:10px;
+  background: #F5F5F5;
+}

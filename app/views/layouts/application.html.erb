@@ -4,15 +4,17 @@
     <title>Favpost</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places",'data-turbolinks-track' => true   %>
+    <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places",'data-turbolinks-track' => true   %>
 
-		<%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
   </head>
   <body>
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-brand">
-          <%= link_to "Favpost", root_path %>
+          <%= link_to image_tag('logo.png'), root_path %>
+           
+          
         </div>
         <% if user_signed_in? %>
 
@@ -34,7 +36,7 @@
                 <li>
                     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                 </li>
-              <ul/>
+              </ul>
           </ul>
         <% else %>
           <ul class="nav navbar-nav navbar-right">
@@ -47,34 +49,14 @@
           </ul>
         <% end %>
       </div>
-
-
-
-
-
-<div class= "top-bar">
-    <ol class="breadcrumb">
-  <li><a href="#">Foods</a></li>
-  <li><a href="#">Cloths</a></li>
-  <li><a href="#">Cosmetics</a></li>
-</ol>
-  </div>
-
-
-
-
-
     </nav>
-
+    <%= yield :nav_bar %>
     <div class="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert alert-info" %>
       <% end %>
-   
-
-
       <%= yield %>
-		</div>
+    </div>
 
     <footer>
       <div class = "container">

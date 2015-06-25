@@ -56,6 +56,9 @@ $(document).on "ready page:load", ->
 
   $("#submit_pin").click ->
     data = $(this.form).serialize()
+    if $('#images img').length <= 0 && $('.preview img').length <= 0
+      alert('Please add file')
+      return false
     pinRequest = $.ajax
       type: @form.method
       url: @form.action

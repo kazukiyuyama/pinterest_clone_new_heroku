@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610062302) do
+ActiveRecord::Schema.define(version: 20150622101759) do
 
   create_table "commontator_comments", force: true do |t|
     t.string   "creator_type"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150610062302) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "tag"
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"

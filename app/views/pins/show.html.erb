@@ -1,13 +1,13 @@
-
+<hr>
 
 <div class="row" id="pin_show">
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
-			<% @pin.images.each do |picture| %>
-				<div class="panel-heading pin_image">
-					<%= image_tag picture.preview %>
-				</div>
-			<% end %>
+      <% @pin.images.each do |picture| %>
+        <div class="panel-heading pin_image">
+          <%= image_tag picture.preview %>
+        </div>
+      <% end %>
       <div class="panel-body">
         <div class="btn-group pull-right">
           <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
@@ -25,18 +25,21 @@
         <p class="description">
           <%= @pin.description %>
         </p>
+        <p>
+          <%= @pin.tag %>
+        </p>
         <p class="description price">
           Price: ¥<%= @pin.price %>
         </p>
-				<p class="description">
-					<%= @pin.address %>
-				</p>
+        <p class="description">
+          <%= @pin.address %>
+        </p>
 
 
-				<div id="map-canvas" data-longtitude="<%= @pin.longitude %>" data-latitude="<%= @pin.latitude %>" style="width:500px; height:300px"></div>
+        <div id="map-canvas" data-longtitude="<%= @pin.longitude %>" data-latitude="<%= @pin.latitude %>" style="width:500px; height:300px"></div>
 
 
-				
+        
         <hr>
         <p class="user">
           Submitted by

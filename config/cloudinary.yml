@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hszcaf3sf
+  api_key: '149993798241141'
+  api_secret: qu9ds5AjCppP7Qtw-mhslFFs8ww
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hszcaf3sf
+  api_key: '149993798241141'
+  api_secret: qu9ds5AjCppP7Qtw-mhslFFs8ww
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hszcaf3sf
+  api_key: '149993798241141'
+  api_secret: qu9ds5AjCppP7Qtw-mhslFFs8ww
+  enhance_image_tag: true
+  static_image_support: false
